@@ -28,3 +28,16 @@ table.sync({ force: true }).then(() => {
     });
     
 });
+
+// var table = require('./models/role.model');
+// table.sync({ force: true }).then(() => {
+//     console.log("created ./models/role.model'");
+//     return table.create({
+//         roleCode : "admin",
+//         roleName : "Administrator",
+//         allowTransaction: true,
+//         allowContentManagement: true,
+//         allowAdmin: true
+//     });
+    
+// });

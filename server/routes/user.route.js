@@ -4,7 +4,7 @@ var express = require('express'),
 var validateToken = require('../middlewares/jwt-token.js');
 
 
-router.get('/all', validateToken, function (req, res, next) {
+router.get('/all', function (req, res, next) {
 
     console.log("users route all");
     console.log(req);

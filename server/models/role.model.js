@@ -1,7 +1,7 @@
 var db = require('../db/postgres.js');
 var Sequelize = require('sequelize');
 
-module.exports = db.instanceSequelize.define('user', {
+module.exports = db.instanceSequelize.define('role', {
 
     id: {
         type: Sequelize.BIGINT,
@@ -10,41 +10,30 @@ module.exports = db.instanceSequelize.define('user', {
         allowNull: false
     },
 
-    username: {
+    roleCode: {
         type: Sequelize.STRING,
         required: true,
         unique: true
     },
 
-    fullname: {
+    roleName: {
         type: Sequelize.STRING,
         required: true
     },
 
-    password: {
-        type: Sequelize.STRING,
-        required: true
-    },
-
-    contactNo: {
-        type: Sequelize.STRING,
-    },
-
-    address: {
-        type: Sequelize.STRING,
-    },
-
-    hireDate: {
-        type: Sequelize.DATE,
-    },
-
-    isActive: {
+    allowTransaction: {
         type: Sequelize.BOOLEAN,
         defaultValue: true
     },
-   
-    roleId : {
-        type: Sequelize.BIGINT
+
+    allowContentManagement: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
+    },
+
+    allowAdmin: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
     }
 
 });

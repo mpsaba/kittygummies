@@ -22,6 +22,7 @@ server.listen(app.get('port'), function () {
     db.initConnection();
 
     db.models.User = require('./models/user.model');
+    db.models.Role = require('./models/role.model');
 
 });
 
